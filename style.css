@@ -37,7 +37,8 @@ p {
 
 .inner,
 nav,
-main {
+main,
+footer {
   width: 100%;
   max-width: 1024px;
   margin: 0 auto;
@@ -174,4 +175,18 @@ main {
 
 .btns .invert-btn:hover {
   box-shadow: 0 4px 14px 0 rgb(0 0 0 / 18%);
+}
+
+/* Footer */
+
+footer {
+  margin-top: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.link {
+  color: var(--color-blue);
 }
