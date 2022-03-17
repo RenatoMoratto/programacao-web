@@ -8,3 +8,49 @@
   --color-blue: #0076ffe6;
   --color-dark-blue: #0070f3;
 }
+
+/* Basic */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+a,
+p {
+  color: var(--color-gray);
+}
+
+/* Top bar */
+
+.inner {
+  width: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+.top-bar {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  background: var(--color-black);
+  color: var(--color-white);
+}
+
+.inner {
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.inner p {
+  color: var(--color-white);
+}
