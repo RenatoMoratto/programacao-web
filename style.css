@@ -117,13 +117,15 @@ header nav {
   font-size: 14px;
   border: 2px solid var(--color-light-gray);
   border-radius: 8px;
+  background-color: var(--color-lighter-gray);
   color: var(--color-light-black);
 }
 
 .highlight {
+  margin-right: 5px;
   background: linear-gradient(90deg, #ed6292 25%, #ed5760 87.5%);
   color: var(--color-white);
-  padding: 1px 8px;
+  padding: 4.5px 8px;
   font-weight: bold;
   border-radius: 5px;
   text-transform: uppercase;
