@@ -3,8 +3,9 @@
   --color-black: #000;
   --color-light-black: #111;
   --color-white: #fff;
-  --color-gray: #696969;
+  --color-lighter-gray: #fafafa;
   --color-light-gray: #eaeaea;
+  --color-gray: #696969;
   --color-blue: #0076ffe6;
   --color-dark-blue: #0070f3;
 }
@@ -36,7 +37,7 @@ p {
 }
 
 .inner,
-nav,
+.desktop-top,
 main,
 footer {
   width: 100%;
@@ -56,7 +57,7 @@ footer {
 }
 
 .inner,
-nav {
+.desktop-top {
   padding: 0 1rem;
   display: flex;
   align-items: center;
@@ -69,17 +70,21 @@ nav {
 
 /* Header */
 
-header {
+.mobile-top {
+  display: none;
+}
+
+header nav {
   width: 100%;
   display: flex;
   align-items: center;
 }
 
-nav {
+.desktop-top {
   padding: 1rem 2rem;
 }
 
-nav a:hover {
+.desktop-top a:hover {
   color: var(--color-black);
 }
 
@@ -189,4 +194,71 @@ footer {
 
 .link {
   color: var(--color-blue);
+}
+
+@media (max-width: 768px) {
+  /* Header */
+
+  header nav {
+    max-width: 90%;
+    padding-top: 16px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+  .mobile-top {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .desktop-top {
+    padding-top: 0.5rem;
+  }
+
+  .desktop-top a {
+    font-size: 14px;
+  }
+
+  .desktop-top a:nth-child(1),
+  .desktop-top a:nth-child(8) {
+    display: none;
+  }
+
+  /* Notification */
+  .notification a .br {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .notification {
+    padding: 5px 0 10px;
+  }
+
+  .notification a {
+    max-width: 90%;
+  }
+
+  /* Main */
+
+  main {
+    max-width: 90%;
+    padding: 40px 0 50px;
+  }
+
+  .title {
+    font-size: 48px;
+  }
+
+  .description {
+    font-size: 16px;
+  }
+
+  /* Footer */
+
+  footer {
+    margin-top: 10px;
+  }
 }
