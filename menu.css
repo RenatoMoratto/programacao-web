@@ -10,9 +10,9 @@ button {
   position: relative;
   display: block;
   background: var(--color-black);
-  width: 22px;
+  width: 1.375rem;
   height: 1px;
-  margin-top: 3px;
+  margin-top: 0.188rem;
   transition: 0.15s ease;
 }
 
@@ -31,7 +31,7 @@ button {
 }
 
 .hamburguer::before {
-  top: -9px;
+  top: -0.563rem;
 }
 
 /* X */
@@ -41,7 +41,7 @@ button {
 }
 
 #menu-hamburguer:checked ~ label .hamburguer:before {
-  transform: translateY(9px) rotate(90deg);
+  transform: translateY(0.563rem) rotate(90deg);
 }
 
 #menu-hamburguer:checked ~ #mobile-menu {
