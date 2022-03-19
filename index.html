@@ -28,6 +28,8 @@
     <!-- CSS
     ====================== -->
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="menu.css" />
+    <link rel="stylesheet" href="mobile-menu.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -71,12 +73,40 @@
     <!-- Header
       ===================== -->
     <header>
-      <nav>
+      <div>
         <div class="mobile-top">
           <a href="/"><img src="./img/logo-next.svg" alt="Logo Next.js" /></a>
-          <a href="#learn" class="btn">Learn</a>
+          <div class="rigth">
+            <a href="#learn" class="btn">Learn</a>
+
+            <div class="menu-hamburguer-wrapper">
+              <input id="menu-hamburguer" type="checkbox" />
+
+              <label for="menu-hamburguer">
+                <div class="menu">
+                  <span class="hamburguer"></span>
+                </div>
+              </label>
+
+              <!-- Mobile Menu
+                ============================= -->
+              <nav id="mobile-menu">
+                <ul>
+                  <li><a href="learn">Learn</a></li>
+                  <li><a href="#showcase">Showcase</a></li>
+                  <li><a href="#docs">Docs</a></li>
+                  <li><a href="#blog">Blog</a></li>
+                  <li><a href="#analytics">Analytics</a></li>
+                  <li><a href="#Commerce">Commerce</a></li>
+                  <li><a href="#examples">Examples</a></li>
+                  <li><a href="#enterprise">Enterprise</a></li>
+                  <li><a href="#github">GitHub</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
         </div>
-        <div class="desktop-top">
+        <nav class="desktop-top">
           <a href="/"><img src="./img/logo-next.svg" alt="Logo Next.js" /></a>
           <a href="#showcase">Showcase</a>
           <a href="#docs">Docs</a>
@@ -86,8 +116,8 @@
           <a href="#enterprise">Enterprise</a>
           <a href="#learn" class="btn">Learn</a>
           <a><i class="fa fa-github" style="font-size: 24px"></i></a>
-        </div>
-      </nav>
+        </nav>
+      </div>
     </header>
     <!--  Notification
       =========================== -->

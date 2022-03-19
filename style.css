@@ -74,7 +74,7 @@ footer {
   display: none;
 }
 
-header nav {
+header > div {
   width: 100%;
   display: flex;
   align-items: center;
@@ -201,7 +201,7 @@ footer {
 @media (max-width: 768px) {
   /* Header */
 
-  header nav {
+  header > div {
     max-width: 90%;
     padding-top: 16px;
     display: flex;
@@ -262,5 +262,28 @@ footer {
 
   footer {
     margin-top: 10px;
+  }
+}
+
+@media (max-width: 635px) {
+  /* Top bar */
+
+  .top-bar p {
+    font-size: 14px;
+  }
+
+  .desktop-top {
+    display: none;
+  }
+
+  header {
+    display: flex;
+    justify-content: center;
+  }
+
+  .mobile-top .rigth {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
   }
 }
