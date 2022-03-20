@@ -320,4 +320,8 @@ footer {
     align-items: center;
     gap: 1.875rem;
   }
+
+  footer {
+    margin-bottom: 3.438rem;
+  }
 }
