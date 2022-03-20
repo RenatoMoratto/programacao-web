@@ -198,6 +198,25 @@ footer {
   color: var(--color-blue);
 }
 
+@media (max-width: 1046px) {
+  .notification a {
+    max-width: 90%;
+  }
+
+  main {
+    padding: 3.75rem 0 0 1.25rem;
+    max-width: 95%;
+  }
+
+  .title {
+    font-size: 4.375em;
+  }
+
+  .description {
+    font-size: 1em;
+  }
+}
+
 @media (max-width: 768px) {
   /* Header */
 
@@ -237,10 +256,6 @@ footer {
 
   .notification {
     padding: 0.313rem 0 0.625;
-  }
-
-  .notification a {
-    max-width: 90%;
   }
 
   /* Main */
