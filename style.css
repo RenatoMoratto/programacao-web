@@ -302,3 +302,22 @@ footer {
     gap: 1rem;
   }
 }
+
+@media (max-width: 542px) {
+  .notification a {
+    margin-left: 1rem;
+    max-width: 100%;
+  }
+
+  main {
+    max-width: 95%;
+    padding-bottom: 1.875rem;
+  }
+
+  .btns {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.875rem;
+  }
+}
