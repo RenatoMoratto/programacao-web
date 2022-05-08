@@ -14,6 +14,32 @@ if (displayWidth <= 768) {
 	$loginBtn = $loginBtns[1]; // Desktop
 }
 
+const getQuotes = async param => {
+    let quotes = "";
+    let $quotes = document.querySelector(".quotes");
+
+    if ($quotes) {
+        $quotes.parentNode.removeChild($quotes);
+    }
+
+    try {
+        const response = await fetch(`https://programming-quotes-api.herokuapp.com/Quotes${param}`);
+        const data = await response.json();
+
+        if (data.length) {
+            data.forEach(quote => {
+                quotes = `${quotes}<blockquote>${quote.en}<br/><cite>${quote.author}</cite></blockquote>`;
+            });
+        } else {
+            quotes = `<blockquote>${data.en}<br/><cite>${data.author}</cite></blockquote>`;
+        }
+
+        $container.insertAdjacentHTML("beforeend", `<main class="quotes">${quotes}</main>`);
+    } catch (error) {
+        alert(error.message);
+    }
+};
+
 // Modal
 const showModal = show => {
 	if (show == true) {
@@ -41,6 +67,7 @@ const login = token => {
 	$loginBtn.addEventListener("click", logout);
 	showModal(false);
     $container.removeChild($content);
+    getQuotes("?count=3");
 };
 
 const logout = () => {
