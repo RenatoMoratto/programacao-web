@@ -27,6 +27,7 @@
 		<link rel="stylesheet" href="style.css" />
 		<link rel="stylesheet" href="menu.css" />
 		<link rel="stylesheet" href="mobile-menu.css" />
+		<link rel="stylesheet" href="modal.css" />
 		<link
 			rel="stylesheet"
 			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -39,6 +40,22 @@
 		<link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png" />
 	</head>
 	<body>
+		<div class="modal">
+			<form id="form">
+				<span class="close-button">&times;</span>
+				<h1>Login</h1>
+				<div class="input-group">
+					<label for="email">Email</label>
+					<input id="email" type="email" />
+				</div>
+				<div class="input-group">
+					<label for="senha">Senha</label>
+					<input id="senha" type="password" />
+				</div>
+				<button class="btn" type="submit">Enviar</button>
+			</form>
+		</div>
+
 		<!-- Top bar     
     ======================== -->
 		<div class="top-bar">
@@ -60,7 +77,7 @@
 				<div class="mobile-top">
 					<a href="/"><img src="./img/logo-next.svg" alt="Logo Next.js" /></a>
 					<div class="rigth">
-						<a href="#learn" class="btn">Learn</a>
+						<button class="login btn">Login</button>
 
 						<div class="menu-hamburguer-wrapper">
 							<input id="menu-hamburguer" type="checkbox" />
@@ -75,8 +92,6 @@
                 ============================= -->
 							<nav id="mobile-menu">
 								<ul>
-									<li><a href="/login">Entrar</a></li>
-									<li><a href="learn">Learn</a></li>
 									<li><a href="#showcase">Showcase</a></li>
 									<li><a href="#docs">Docs</a></li>
 									<li><a href="#blog">Blog</a></li>
@@ -105,36 +120,39 @@
 				</nav>
 			</div>
 		</header>
-		<!--  Notification
+		<div id="container">
+			<div class="content-wrapper">
+				<!--  Notification
+				=========================== -->
+				<section class="notification">
+					<a href="#next-12.1">
+						<span class="highlight">New</span><span class="br"></span><b>Next.js 12.1</b>: Including
+						on-demand ISR, support for styled-components and Relay, and our first developer survey →</a
+					>
+				</section>
+				<!-- Main
       =========================== -->
-		<section class="notification">
-			<a href="#next-12.1">
-				<span class="highlight">New</span><span class="br"></span><b>Next.js 12.1</b>: Including on-demand ISR,
-				support for styled-components and Relay, and our first developer survey →</a
-			>
-		</section>
-		<!-- Main
-      =========================== -->
-		<main>
-			<h1 class="title">
-				The React Framework <br />
-				for Production
-			</h1>
-			<p class="description">
-				Next.js gives you the best developer experience with all the features you need for production: hybrid
-				static & server rendering, TypeScript support, smart bundling, route pre-fetching, and more. No config
-				needed.
-			</p>
-			<div class="btns">
-				<a href="#learn" class="btn">Start learning</a>
-				<a href="#documentation" class="invert-btn">Documentation</a>
+				<main>
+					<h1 class="title">
+						The React Framework <br />
+						for Production
+					</h1>
+					<p class="description">
+						Next.js gives you the best developer experience with all the features you need for production:
+						hybrid static & server rendering, TypeScript support, smart bundling, route pre-fetching, and
+						more. No config needed.
+					</p>
+					<div class="btns">
+						<a href="#learn" class="btn">Start learning</a>
+						<a href="#documentation" class="invert-btn">Documentation</a>
+					</div>
+				</main>
 			</div>
-		</main>
+		</div>
 		<footer>
 			<a href="https://github.com/vercel/next.js/blob/canary/license.md" target="_blank">License: MIT</a>
 			<a href="https://github.com/RenatoMoratto" target="_blank" class="link">GitHub</a>
 		</footer>
-		<script type="text/javascript" src="./modal.js"></script>
-		<script type="text/javascript" src="./login.js"></script>
+		<script type="module" src="./script.js"></script>
 	</body>
 </html>
