@@ -14,6 +14,20 @@ if (displayWidth <= 768) {
 	$loginBtn = $loginBtns[1]; // Desktop
 }
 
+const searchBar = () => {
+	return `<form class="search-bar">
+                <div>
+                    <label for="totQuotes">Total of quotes:</label>
+                    <input id="totQuotes" type="number" value="3" min="1" max="500" />
+                </div>
+                <div>
+                <button id="randomQuote" class="btn">Random quote</button>
+                    <button class="btn" type="submit">Search</button>
+                </div>
+            </form>
+        `;
+};
+
 const getQuotes = async param => {
 	let quotes = "";
 	let $quotes = document.querySelector(".quotes");
@@ -65,6 +79,22 @@ const login = token => {
 	$loginBtn.addEventListener("click", logout);
 	showModal(false);
 	$container.removeChild($content);
+	$container.insertAdjacentHTML("afterbegin", searchBar());
+
+	const $searchBar = document.querySelector(".search-bar");
+	const $randomQuote = document.querySelector("#randomQuote");
+
+	$randomQuote.addEventListener("click", event => {
+		event.preventDefault();
+		getQuotes("/random");
+	});
+
+	$searchBar.addEventListener("submit", event => {
+		event.preventDefault();
+		const totQuotes = event.target.totQuotes.value;
+		getQuotes(`?count=${totQuotes}`);
+	});
+
 	getQuotes("?count=3");
 };
 
