@@ -1,0 +1,47 @@
+.quotes {
+	padding: 0.5rem;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: start;
+	gap: 1rem;
+}
+blockquote {
+	text-align: left;
+	padding-left: 2rem;
+	border-left: 0.4rem solid var(--color-dark-blue);
+	font-family: "Roboto", serif;
+	font-size: 1.5em;
+}
+blockquote:before,
+blockquote:after {
+	font-family: Calibri;
+	font-size: 32px;
+	color: var(--color-dark-blue);
+}
+blockquote:before {
+	content: "\201c";
+}
+blockquote:after {
+	content: "\201e";
+}
+blockquote cite {
+	padding-left: 2rem;
+	font-size: 60%;
+	text-align: center;
+}
+blockquote cite:before {
+	content: " \2015 ";
+}
+
+.search-bar {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 0.75rem;
+}
+
+.search-bar .btn {
+	padding: 0.3em 0.25rem;
+}

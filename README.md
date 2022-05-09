@@ -1,6 +1,6 @@
-# 1° Projeto da Disciplina Programação Web - AS34A
-Clone da página inicial do Next.js.
+# 2° Projeto da Disciplina Programação Web - AS34A
+Implementação de login e requisição AJAX no site do projeto 01.
 
 ## Proposta
- - Utilizando apenas HTML e CSS, clonar a página inicial da [Next.js](https://nextjs.org/), apenas o que é mostrado inicialmente (sem o scroll);
- - Tornar a página responsiva para todos os aparelhos.
+ - Realização do login da aplicação com a api [regres.in](https://reqres.in/);
+ - Cada usuario depois de logado no sistema web deve ser capaz de realizar consultas a dados disponíveis na API JSON aberta [selecionada](https://programming-quotes-api.herokuapp.com/index.html).

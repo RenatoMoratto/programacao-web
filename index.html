@@ -1,155 +1,159 @@
 <!DOCTYPE html>
 <html lang="pt">
-  <!-- 
+	<!-- 
 
     Author: Renato Willyan Moratto Filho
     Year: 2022
 
   -->
-  <head>
-    <!-- Basic page needs
+	<head>
+		<!-- Basic page needs
     ====================== -->
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width" />
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width" />
 
-    <title>Next.js by Vercel - The React Framework</title>
+		<title>Next.js by Vercel - The React Framework</title>
 
-    <meta name="author" content="Renato Willyan Moratto Filho" />
-    <meta
-      name="keywords"
-      content="Clone, Next.js, desenvolvimento web, programador, html, css"
-    />
-    <meta
-      name="description"
-      content="Clone da página inicial da Nextjs.org, desenvolvido como o primeiro projeto para a disciplina de Programação Web"
-    />
+		<meta name="author" content="Renato Willyan Moratto Filho" />
+		<meta name="keywords" content="Clone, Next.js, desenvolvimento web, programador, html, css" />
+		<meta
+			name="description"
+			content="Clone da página inicial da Nextjs.org, desenvolvido como o primeiro projeto para a disciplina de Programação Web"
+		/>
 
-    <!-- CSS
+		<!-- CSS
     ====================== -->
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="menu.css" />
-    <link rel="stylesheet" href="mobile-menu.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
+		<link rel="stylesheet" href="style.css" />
+		<link rel="stylesheet" href="menu.css" />
+		<link rel="stylesheet" href="mobile-menu.css" />
+		<link rel="stylesheet" href="modal.css" />
+		<link rel="stylesheet" href="quotes.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+		/>
 
-    <!-- Favicons
+		<!-- Favicons
     ====================== -->
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="/img/favicon/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="/img/favicon/favicon-16x16.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="/img/favicon/apple-touch-icon.png"
-    />
-  </head>
-  <body>
-    <!-- Top bar     
+		<link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png" />
+		<link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png" />
+	</head>
+	<body>
+		<div class="modal">
+			<form id="form">
+				<span class="close-button">&times;</span>
+				<h1>Login</h1>
+				<div class="input-group">
+					<label for="email">Email</label>
+					<input id="email" type="email" />
+				</div>
+				<div class="input-group">
+					<label for="senha">Senha</label>
+					<input id="senha" type="password" />
+				</div>
+				<button class="btn" type="submit">Enviar</button>
+			</form>
+		</div>
+
+		<!-- Top bar     
     ======================== -->
-    <div class="top-bar">
-      <div class="inner">
-        <img src="./img/logo-vercel.svg" alt="Logo Vercel" />
-        <a
-          href="https://vercel.com/solutions/nextjs?utm_source=next-site&utm_medium=banner&utm_campaign=next-website"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <p>Deploy <b>Next.js</b> in seconds →</p>
-        </a>
-      </div>
-    </div>
-    <!-- Header
+		<div class="top-bar">
+			<div class="inner">
+				<img src="./img/logo-vercel.svg" alt="Logo Vercel" />
+				<a
+					href="https://vercel.com/solutions/nextjs?utm_source=next-site&utm_medium=banner&utm_campaign=next-website"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					<p>Deploy <b>Next.js</b> in seconds →</p>
+				</a>
+			</div>
+		</div>
+		<!-- Header
       ===================== -->
-    <header>
-      <div>
-        <div class="mobile-top">
-          <a href="/"><img src="./img/logo-next.svg" alt="Logo Next.js" /></a>
-          <div class="rigth">
-            <a href="#learn" class="btn">Learn</a>
+		<header>
+			<div>
+				<div class="mobile-top">
+					<a href="/"><img src="./img/logo-next.svg" alt="Logo Next.js" /></a>
+					<div class="rigth">
+						<button class="login btn">Login</button>
 
-            <div class="menu-hamburguer-wrapper">
-              <input id="menu-hamburguer" type="checkbox" />
+						<div class="menu-hamburguer-wrapper">
+							<input id="menu-hamburguer" type="checkbox" />
 
-              <label for="menu-hamburguer">
-                <div class="menu">
-                  <span class="hamburguer"></span>
-                </div>
-              </label>
+							<label for="menu-hamburguer">
+								<div class="menu">
+									<span class="hamburguer"></span>
+								</div>
+							</label>
 
-              <!-- Mobile Menu
+							<!-- Mobile Menu
                 ============================= -->
-              <nav id="mobile-menu">
-                <ul>
-                  <li><a href="learn">Learn</a></li>
-                  <li><a href="#showcase">Showcase</a></li>
-                  <li><a href="#docs">Docs</a></li>
-                  <li><a href="#blog">Blog</a></li>
-                  <li><a href="#analytics">Analytics</a></li>
-                  <li><a href="#Commerce">Commerce</a></li>
-                  <li><a href="#examples">Examples</a></li>
-                  <li><a href="#enterprise">Enterprise</a></li>
-                  <li><a href="#github">GitHub</a></li>
-                </ul>
-              </nav>
-            </div>
-          </div>
-        </div>
-        <nav class="desktop-top">
-          <a href="/"><img src="./img/logo-next.svg" alt="Logo Next.js" /></a>
-          <a href="#showcase">Showcase</a>
-          <a href="#docs">Docs</a>
-          <a href="#blog">Blog</a>
-          <a href="#analytics">Analytics</a>
-          <a href="#examples">Examples</a>
-          <a href="#enterprise">Enterprise</a>
-          <a href="#learn" class="btn">Learn</a>
-          <a><i class="fa fa-github" style="font-size: 24px"></i></a>
-        </nav>
-      </div>
-    </header>
-    <!--  Notification
+							<nav id="mobile-menu">
+								<ul>
+									<li><a href="#showcase">Showcase</a></li>
+									<li><a href="#docs">Docs</a></li>
+									<li><a href="#blog">Blog</a></li>
+									<li><a href="#analytics">Analytics</a></li>
+									<li><a href="#Commerce">Commerce</a></li>
+									<li><a href="#examples">Examples</a></li>
+									<li>
+										<a href="#enterprise">Enterprise</a>
+									</li>
+									<li><a href="#github">GitHub</a></li>
+								</ul>
+							</nav>
+						</div>
+					</div>
+				</div>
+				<nav class="desktop-top">
+					<a href="/"><img src="./img/logo-next.svg" alt="Logo Next.js" /></a>
+					<a href="#showcase">Showcase</a>
+					<a href="#docs">Docs</a>
+					<a href="#blog">Blog</a>
+					<a href="#analytics">Analytics</a>
+					<a href="#examples">Examples</a>
+					<a href="#enterprise">Enterprise</a>
+					<button class="login btn">Login</button>
+					<a><i class="fa fa-github" style="font-size: 24px"></i></a>
+				</nav>
+			</div>
+		</header>
+		<div id="container">
+			<div class="content-wrapper">
+				<!--  Notification
+				=========================== -->
+				<section class="notification">
+					<a href="#next-12.1">
+						<span class="highlight">New</span><span class="br"></span><b>Next.js 12.1</b>: Including
+						on-demand ISR, support for styled-components and Relay, and our first developer survey →</a
+					>
+				</section>
+				<!-- Main
       =========================== -->
-    <section class="notification">
-      <a href="#next-12.1">
-        <span class="highlight">New</span><span class="br"></span><b>Next.js 12.1</b>:
-        Including on-demand ISR, support for styled-components and Relay, and our first
-        developer survey →</a
-      >
-    </section>
-    <!-- Main
-      =========================== -->
-    <main>
-      <h1 class="title">
-        The React Framework <br />
-        for Production
-      </h1>
-      <p class="description">
-        Next.js gives you the best developer experience with all the features you need for
-        production: hybrid static & server rendering, TypeScript support, smart bundling,
-        route pre-fetching, and more. No config needed.
-      </p>
-      <div class="btns">
-        <a href="#learn" class="btn">Start learning</a>
-        <a href="#documentation" class="invert-btn">Documentation</a>
-      </div>
-    </main>
-    <footer>
-      <a href="https://github.com/vercel/next.js/blob/canary/license.md" target="_blank"
-        >License: MIT</a
-      >
-      <a href="https://github.com/RenatoMoratto" target="_blank" class="link">GitHub</a>
-    </footer>
-  </body>
+				<main>
+					<h1 class="title">
+						The React Framework <br />
+						for Production
+					</h1>
+					<p class="description">
+						Next.js gives you the best developer experience with all the features you need for production:
+						hybrid static & server rendering, TypeScript support, smart bundling, route pre-fetching, and
+						more. No config needed.
+					</p>
+					<div class="btns">
+						<a href="#learn" class="btn">Start learning</a>
+						<a href="#documentation" class="invert-btn">Documentation</a>
+					</div>
+				</main>
+			</div>
+		</div>
+		<footer>
+			<a href="https://github.com/vercel/next.js/blob/canary/license.md" target="_blank">License: MIT</a>
+			<a href="https://github.com/RenatoMoratto" target="_blank" class="link">GitHub</a>
+		</footer>
+		<script type="module" src="./script.js"></script>
+	</body>
 </html>
