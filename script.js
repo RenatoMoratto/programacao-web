@@ -4,6 +4,8 @@ const $modal = document.querySelector(".modal");
 const $closeButton = document.querySelector(".close-button");
 const $form = document.querySelector("#form");
 const $content = document.querySelector(".content-wrapper");
+const $passwordMessage = document.querySelector("#senha-message");
+const $emailMessage = document.querySelector("#email-message");
 
 let $loginBtn;
 
@@ -106,30 +108,34 @@ const logout = () => {
 const submitHandler = async event => {
 	event.preventDefault();
 
-	const email = event.target.email.value;
-	const password = event.target.senha.value;
+	const email = event.target.email;
+	const password = event.target.senha;
 
-	const isEmailInvalid = email.trim() === 0 || email.length < 3;
-	const isPasswordInvalid = password.trim() === 0 || password.length < 3;
+	$passwordMessage.classList.add("hide");
+	$emailMessage.classList.add("hide");
+	email.classList.remove("invalid");
+	password.classList.remove("invalid");
 
-	if (isEmailInvalid || isPasswordInvalid) {
-		let message = isEmailInvalid
-			? "Insert a valid email address"
-			: "The password must be at least 3 characters long";
-		if (isEmailInvalid && isPasswordInvalid) {
-			message = "Both email and password are invalid.\nInsert a valid email address and password.";
-		}
-		alert(message);
-		return;
+	const isEmailInvalid = email.value.trim() === 0 || email.value.length < 3;
+	const isPasswordInvalid = password.value.trim() === 0 || password.value.length < 3;
+
+	if (isEmailInvalid) {
+		$emailMessage.classList.remove("hide");
+		email.classList.add("invalid");
 	}
+	if (isPasswordInvalid) {
+		$passwordMessage.classList.remove("hide");
+		password.classList.add("invalid");
+	}
+	if (isEmailInvalid || isPasswordInvalid) return;
 
 	try {
 		const response = await fetch("https://reqres.in/api/login", {
 			method: "POST",
 			headers: new Headers({ "Content-Type": "application/json" }),
 			body: JSON.stringify({
-				email,
-				password,
+				email: email.value,
+				password: password.value,
 			}),
 		});
 		const data = await response.json();
